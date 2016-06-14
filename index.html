@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Test Service Request Blob</title>
+   <link rel="stylesheet" type="text/css" href="css/serviceRequest.css"/>
+</head>
+<body>
+<section ng-app="app" ng-controller="page">
+    <h3>
+        {{title}}
+    </h3>
+    <section>
+
+        <ul class="borderStyles">
+            <textarea placeholder="Add Blob Here!" cols="30" rows="5" data-ng-model="blobString"></textarea>
+            <button class="button button5" data-ng-click="parseBlob();">Get Assigned Values</button>
+        </ul>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Size</th>
+                <th>Value</th>
+            </tr>
+            <tr ng-repeat="eachRequest in payLoadblobRequest">
+                <td>{{eachRequest.paramId}}</td>
+                <th>{{eachRequest.precisionLength}}</th>
+                <td>{{eachRequest.storedValue}}</td>
+            </tr>
+        </table>
+    </section>
+</section>
+ <script src="js/angular.min.js"></script>
+  <script src="js/blobberApp.js"></script>
+</body>
+</html>
+
+
+
